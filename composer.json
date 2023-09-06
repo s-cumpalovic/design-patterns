@@ -1,0 +1,15 @@
+{
+    "name": "rosa/hfdp-exercises",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "stefanc",
+            "email": "stefan.cumpalovic@devione.com"
+        }
+    ],
+    "require": {}
+}
