@@ -7,11 +7,11 @@ namespace App\Models\Weapon;
 use App\Constants\Weapon\WeaponDamageValue;
 use App\Models\AttackType\MeleeAttackType;
 
-class SwordWeapon extends Weapon
+class AxeWeapon extends Weapon
 {
     public function __construct()
     {
         $this->setAttackType(new MeleeAttackType());
-        $this->setDamage(WeaponDamageValue::SWORD);
+        $this->setDamage(WeaponDamageValue::AXE);
     }
 }

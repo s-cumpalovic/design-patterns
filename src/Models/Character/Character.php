@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Models\Character;
 
 use App\Models\Armour\ArmourInterface;
-use App\Models\Weapon\WeaponInterface;
+use App\Models\Weapon\Weapon;
 
 abstract class Character
 {
-    private WeaponInterface $weapon;
+    private Weapon $weapon;
     private ArmourInterface $armour;
 
-    public function setWeapon(WeaponInterface $weapon): void
+    public function setWeapon(Weapon $weapon): void
     {
         $this->weapon = $weapon;
     }
@@ -20,11 +20,5 @@ abstract class Character
     public function setArmour(ArmourInterface $armour): void
     {
         $this->armour = $armour;
-    }
-
-    public function fight(): void
-    {
-        $this->weapon->useWeapon();
-        $this->armour->useArmor();
     }
 }
