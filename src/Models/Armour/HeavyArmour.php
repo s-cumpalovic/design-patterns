@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace App\Models\Armour;
 
-class HeavyArmour implements ArmourInterface
+use App\Constants\Armour\ArmourProtectionValue;
+
+class HeavyArmour extends Armour
 {
-    public function useArmor(): void
+    public function __construct()
     {
-        echo 'Heavy Armour: *ching* *ching*';
+        $this->setProtection(ArmourProtectionValue::HEAVY_ARMOUR);
     }
 }

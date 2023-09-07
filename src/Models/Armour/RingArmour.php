@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace App\Models\Armour;
 
-class RingArmour implements ArmourInterface
+use App\Constants\Armour\ArmourProtectionValue;
+
+class RingArmour extends Armour
 {
-    public function useArmor(): void
+    public function __construct()
     {
-        echo 'Ring Armour: *tsk* *tsk*';
+        $this->setProtection(ArmourProtectionValue::RING_ARMOUR);
     }
 }
