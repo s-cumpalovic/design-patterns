@@ -9,9 +9,14 @@ use App\Models\AttackType\MeleeAttackType;
 
 class AxeWeapon extends Weapon
 {
-    public function __construct()
+    public function getAttackType(): string
     {
-        $this->setAttackType(new MeleeAttackType());
-        $this->setDamage(WeaponDamageValue::AXE);
+        $meleeAttackType = new MeleeAttackType();
+        return $meleeAttackType->getType();
+    }
+
+    public function getDamage(): int
+    {
+        return WeaponDamageValue::AXE;
     }
 }

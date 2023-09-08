@@ -9,9 +9,14 @@ use App\Models\AttackType\RangeAttackType;
 
 class BowWeapon extends Weapon
 {
-    public function __construct()
+    public function getAttackType(): string
     {
-        $this->setAttackType(new RangeAttackType());
-        $this->setDamage(WeaponDamageValue::BOW);
+        $rangeAttackWeapon = new RangeAttackType();
+        return $rangeAttackWeapon->getType();
+    }
+
+    public function getDamage(): int
+    {
+        return WeaponDamageValue::BOW;
     }
 }

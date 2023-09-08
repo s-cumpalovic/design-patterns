@@ -9,9 +9,14 @@ use App\Models\AttackType\MeleeAttackType;
 
 class SwordWeapon extends Weapon
 {
-    public function __construct()
+    public function getAttackType(): string
     {
-        $this->setAttackType(new MeleeAttackType());
-        $this->setDamage(WeaponDamageValue::SWORD);
+        $meleeAttackType = new MeleeAttackType();
+        return $meleeAttackType->getType();
+    }
+
+    public function getDamage(): int
+    {
+        return WeaponDamageValue::SWORD;
     }
 }

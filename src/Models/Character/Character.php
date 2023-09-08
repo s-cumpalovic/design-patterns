@@ -17,10 +17,10 @@ abstract class Character
     private Armour $armour;
     private DamageStateInterface $damageState;
 
-    abstract function getBaseDamage(): int;
-    abstract function getAttackType(): string;
-    abstract function prepareAttack(): void;
-    abstract function finishAttack(): void;
+    abstract public function getBaseDamage(): int;
+    abstract public function getAttackType(): string;
+    abstract protected function prepareAttack(): void;
+    abstract protected function finishAttack(): void;
 
     public function getWeapon(): Weapon
     {
