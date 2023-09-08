@@ -5,28 +5,28 @@ declare(strict_types=1);
 namespace App\Models\Character;
 
 use App\Constants\Character\BaseDamageValue;
-use App\Constants\Character\Effects\SoldierFightEffects;
-use App\Models\AttackType\MeleeAttackType;
+use App\Constants\Character\Effects\ArcherFightEffects;
+use App\Models\AttackType\RangeAttackType;
 
-class SoldierCharacter extends Character
+class ArcherCharacter extends Character
 {
     public function getBaseDamage(): int
     {
-        return BaseDamageValue::CHARACTER_SOLDIER;
+        return BaseDamageValue::CHARACTER_ARCHER;
     }
 
     public function getAttackType(): string
     {
-        return MeleeAttackType::TYPE;
+        return RangeAttackType::TYPE;
     }
 
     public function prepareAttack(): void
     {
-        echo SoldierFightEffects::AXE_DRAW;
+        echo ArcherFightEffects::ARROW_DRAW;
     }
 
     public function finishAttack(): void
     {
-        echo SoldierFightEffects::AXE_PUT_BACK;
+        echo ArcherFightEffects::BOW_PUT_BACK;
     }
 }
